@@ -7,3 +7,6 @@ async function get<T>(path: string): Promise<T> {
     }
     return response.json();
 }
+
+const api = {get};
+export default api;
