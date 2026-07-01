@@ -1,4 +1,4 @@
-.pie-chart {
+.pieChart {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -7,12 +7,12 @@
     background: conic-gradient(
             #ff4d4d 0% 1%,
             #4d94ff 1% 70%,
-            #4dff4d 70% 100%
+            #4dff4d 70% 100%,
     );
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.pie-chart-label {
+.pieChartLabel {
     position: absolute;
     /* data-start not working, unable to convert attr(data-start) from string to number */
     --middle-percentage: calc(var(--start) + var(--percentage) / 2);
@@ -21,5 +21,21 @@
     left: calc(50% + (cos(var(--angle)) * var(--radius)));
     top:  calc(50% + (sin(var(--angle)) * var(--radius)));
     transform: translate(-50%, -50%);
+}
 
+.pieChartArc {
+    position: absolute;
+    --percentage: 43%;
+    border-radius: 50%;
+    /*background-color: transparent;*/
+    /*border-style: solid;*/
+    /*border-width: 10px;*/
+    background: conic-gradient(
+            mediumseagreen 0% var(--percentage),
+            transparent var(--percentage) 100%
+    );
+    --padding: 8px;
+    --width: 5px;
+    inset: calc(0px - var(--padding) - var(--width));
+    mask: radial-gradient(farthest-side, transparent calc(100% - var(--width) - 1px), #000 calc(100% - var(--width)));
 }
