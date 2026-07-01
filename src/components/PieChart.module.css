@@ -21,6 +21,7 @@
     left: calc(50% + (cos(var(--angle)) * var(--radius)));
     top:  calc(50% + (sin(var(--angle)) * var(--radius)));
     transform: translate(-50%, -50%);
+    user-select: none;
 }
 
 .pieChartArc {
