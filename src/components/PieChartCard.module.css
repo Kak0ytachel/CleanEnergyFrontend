@@ -1,0 +1,32 @@
+
+.pieChartTitle {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.leaf {
+    width: 1.2rem;
+    height: 1.2rem;
+    transform: translate(0, 30%);
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.leafIndicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+
+.leafContainer {
+    width: 100%;
+    height: 0;
+    /*background-color: #000000;*/
+    position: relative;
+}
