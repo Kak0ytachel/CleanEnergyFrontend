@@ -1,12 +1,13 @@
 import Card from "./components/Card.tsx";
-import PieChart from "./components/PieChart.tsx";
+import PieChartCardGroup from "./components/PieChartCardGroup.tsx";
 
 function App() {
     return (
         <>
             <Card>hiii</Card>
 
-            <PieChart/>
+            {/*<PieChart/>*/}
+            <PieChartCardGroup/>
         </>
     )
 }
