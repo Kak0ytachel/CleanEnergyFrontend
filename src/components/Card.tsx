@@ -3,7 +3,7 @@ import styles from "./Card.module.css";
 
 
 interface ICardProps {
-    children: ReactNode;
+    children?: ReactNode;
     className?: string;
 }
 

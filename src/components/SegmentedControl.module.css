@@ -12,6 +12,8 @@
     font-size: 1rem;
     font-weight: 400;
     user-select: none;
+    display: inline-block;
+    margin-inline: 0.5rem;
 }
 
 .slider {
@@ -19,7 +21,7 @@
     height: 2.75rem;
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     display: inline-block;
     position: absolute;
