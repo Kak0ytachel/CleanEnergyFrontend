@@ -7,7 +7,7 @@
 }
 
 .button {
-    background-color: #67EF32;
+    background-color: var(--green);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
     border: none;
     border-radius: 16px;
@@ -33,7 +33,7 @@
     min-height: 10px;
     width: 6px;
     border-radius: 12px;
-    background-color: #67EF32;
+    background-color: var(--green);
     content: "";
     display: inline-block;
     position: absolute;

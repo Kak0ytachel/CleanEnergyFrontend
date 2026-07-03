@@ -33,7 +33,7 @@
     /*border-style: solid;*/
     /*border-width: 10px;*/
     background: conic-gradient(
-            mediumseagreen 0% var(--percentage),
+            var(--green) 0% var(--percentage),
             transparent var(--percentage) 100%
     );
     --padding: 8px;
