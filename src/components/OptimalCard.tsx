@@ -41,7 +41,7 @@ export default function OptimalCard() {
         const el = (
             <div className={styles.result} key={interval.fetchtime}>{interval.hours || 0} hours at
                 <img src={leaf} alt={"leaf"} className={styles.leaf}/>
-                {interval.perc}% clean energy (average):
+                {interval.perc}% clean energy (avg.):
                 {"\n"}{formatPeriod(interval.from, interval.to)}
             </div>
         )
@@ -51,10 +51,12 @@ export default function OptimalCard() {
     return (
         <Card className={styles.card}>
             <h3 className={styles.title}>Optimal charging time</h3>
-            <span>Duration:
+
+            <span className={styles.controlsBox}>Duration:
             <SegmentedControl updateValue={setHours}/>
-                hours</span>
+                hours
             <button className={styles.button} onClick={fetch}>Submit</button>
+                </span>
             <div className={`${styles.container} ${(elements.length == 0)? styles.containerPlaceholder: ""}`}>
                 {(elements.length > 0)? elements :
                     <>

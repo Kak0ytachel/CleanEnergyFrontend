@@ -26,7 +26,7 @@
     font-size: 1rem;
     font-weight: 500;
     margin-block: 1rem;
-    animation: appearAnimation 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: appearAnimation 0.6s cubic-bezier(0.4, 0.2, 0.2, 1) forwards;
 }
 
 .result::before {
@@ -71,7 +71,7 @@
     }
     to {
         opacity: 1;
-        max-height: 80px;
+        max-height: 10rem;
         margin-bottom: 24px;
         transform: translateY(0);
     }
@@ -94,4 +94,28 @@
     margin-top: 0.5rem;
     /*display: block;*/
     opacity: 0.8;
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+    .controlsBox {
+        display: block;
+        margin-inline: auto;
+        width: fit-content;
+    }
+
+    .button {
+        margin-left: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .controlsBox {
+        display: block;
+        min-width: 300px;
+    }
+
+    .button {
+        margin: 1rem 0 0 auto;
+        display: block;
+    }
 }

@@ -41,3 +41,9 @@
     inset: calc(0px - var(--padding) - var(--width));
     mask: radial-gradient(farthest-side, transparent calc(100% - var(--width) - 1px), #000 calc(100% - var(--width)));
 }
+
+@media (max-width: 600px) {
+    .pieChart {
+        margin-inline: auto;
+    }
+}
