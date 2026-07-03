@@ -26,6 +26,7 @@
     font-size: 1rem;
     font-weight: 500;
     margin-block: 1rem;
+    animation: appearAnimation 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .result::before {
@@ -46,9 +47,25 @@
     height: 1.2rem;
     transform: translate(0, 30%);
     user-select: none;
-    margin-inline: 0.2rem 0.1rem;
+    margin-inline: 0.35rem 0.1rem;
 }
 
 .container {
     margin-top: 2rem;
+    min-height: 19rem;
+}
+
+@keyframes appearAnimation {
+    from {
+        opacity: 0;
+        max-height: 0;
+        margin-bottom: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        max-height: 80px;
+        margin-bottom: 24px;
+        transform: translateY(0);
+    }
 }

@@ -18,3 +18,11 @@ export interface IEnergyTypeItem {
     //noinspection SpellCheckingInspection
     perc: number
 }
+
+export interface ICleanEnergyInterval {
+    from: string,
+    to: string,
+    perc: number
+    hours: number
+    fetchtime: string // used as a key for react
+}
