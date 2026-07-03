@@ -16,8 +16,8 @@ function getCleanPercentage(items: IEnergyTypeItem[]) {
 
 }
 
-export default function PieChartCard({data = {from: "1970-01-01T", to: "", generationmix: []}}: {data?: IGenerationData}) {
-    const title = formatDate(data.from);
+export default function PieChartCard({data = {from: "1970-01-01T", to: "", generationmix: []}, loading = false}: {data?: IGenerationData, loading?: boolean}) {
+    const title = (loading)? "Loading...": formatDate(data.from);
     const percentage = getCleanPercentage(data.generationmix);
     return (
         <Card>

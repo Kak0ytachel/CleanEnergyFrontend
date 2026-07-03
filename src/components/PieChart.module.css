@@ -42,7 +42,7 @@
     mask: radial-gradient(farthest-side, transparent calc(100% - var(--width) - 1px), #000 calc(100% - var(--width)));
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     .pieChart {
         margin-inline: auto;
     }

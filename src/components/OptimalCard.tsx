@@ -55,7 +55,7 @@ export default function OptimalCard() {
             <span className={styles.controlsBox}>Duration:
             <SegmentedControl updateValue={setHours}/>
                 hours
-            <button className={styles.button} onClick={fetch}>Submit</button>
+            <button className={styles.button} onClick={fetch} disabled={loading}>Submit</button>
                 </span>
             <div className={`${styles.container} ${(elements.length == 0)? styles.containerPlaceholder: ""}`}>
                 {(elements.length > 0)? elements :

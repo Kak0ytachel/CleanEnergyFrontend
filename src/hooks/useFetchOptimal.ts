@@ -5,12 +5,12 @@ import api from "../services/api.ts";
 
 export default function useFetchOptimal(chargeHours: number) {
     const [intervals, setIntervals] = useState<ICleanEnergyInterval[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState<Error | null>(null);
 
     const fetch = async () => {
         setLoading(true);
-        console.log("fetching optimal");
+        // console.log("fetching optimal");
         api.get<ICleanEnergyInterval>(`/optimal?chargeHours=${chargeHours}`)
             .then( (result: ICleanEnergyInterval) => {
                 result.hours = chargeHours;
@@ -24,7 +24,7 @@ export default function useFetchOptimal(chargeHours: number) {
             })
             .finally( () => {
                 setLoading(false)
-                console.log("done fetching optimal");
+                // console.log("done fetching optimal");
             })
     }
 

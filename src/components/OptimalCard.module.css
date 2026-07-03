@@ -18,6 +18,18 @@
     margin-left: 1rem;
 }
 
+
+
+.button:active {
+    background-color: #3ABC2A
+}
+
+.button:disabled {
+    background-color: #3ABC2A;
+    color: black;
+    cursor: not-allowed;
+}
+
 .result {
     white-space: pre-wrap;
     position: relative;
@@ -96,7 +108,7 @@
     opacity: 0.8;
 }
 
-@media (min-width: 600px) and (max-width: 1050px) {
+@media (min-width: 650px) and (max-width: 1050px) {
     .controlsBox {
         display: block;
         margin-inline: auto;
@@ -108,7 +120,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     .controlsBox {
         display: block;
         min-width: 300px;

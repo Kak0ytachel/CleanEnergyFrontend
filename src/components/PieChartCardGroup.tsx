@@ -5,14 +5,14 @@ import styles from "./PieChartCardGroup.module.css";
 
 export default function PieChartCardGroup() {
     const {stats, loading, error} = useFetchStats();
-    // todo: add loading and error handling
+    // todo: add error handling
 
 
     return (
         <div className={styles.grid}>
-            <PieChartCard data={stats?.today}></PieChartCard>
-            <PieChartCard data={stats?.tomorrow}></PieChartCard>
-            <PieChartCard data={stats?.afterTomorrow}></PieChartCard>
+            <PieChartCard data={stats?.today} loading={loading}></PieChartCard>
+            <PieChartCard data={stats?.tomorrow} loading={loading}></PieChartCard>
+            <PieChartCard data={stats?.afterTomorrow} loading={loading}></PieChartCard>
             <LegendCard/>
         </div>
     )
