@@ -15,7 +15,7 @@
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
-    margin-inline: 1rem;
+    margin-left: 1rem;
 }
 
 .result {
@@ -96,7 +96,7 @@
     opacity: 0.8;
 }
 
-@media (min-width: 600px) and (max-width: 1000px) {
+@media (min-width: 600px) and (max-width: 1050px) {
     .controlsBox {
         display: block;
         margin-inline: auto;
