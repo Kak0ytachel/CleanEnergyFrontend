@@ -30,7 +30,7 @@ export default function PieChart({data = [], percentage = 0}: IPieChartProps) {
         gradient += `${color} ${percentageSum}% ${percentageSum + perc}%, `
         percentageSum += perc;
     }
-    console.log(gradient);
+    // console.log(gradient);
     gradient = gradient.slice(0, -2); // removes trailing comma and space
     return (
         <>

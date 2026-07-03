@@ -55,6 +55,13 @@
     min-height: 19rem;
 }
 
+.containerPlaceholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 @keyframes appearAnimation {
     from {
         opacity: 0;
@@ -68,4 +75,23 @@
         margin-bottom: 24px;
         transform: translateY(0);
     }
+}
+
+
+
+.placeholderImage {
+    height: 180px;
+    width: 180px;
+    opacity: 0.3;
+    /*display: block;*/
+    /*margin-inline: auto auto;*/
+}
+
+.placeholderText {
+    /*text-align: center;*/
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+    /*display: block;*/
+    opacity: 0.8;
 }

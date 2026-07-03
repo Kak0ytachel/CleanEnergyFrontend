@@ -3,10 +3,9 @@ import styles from "./OptimalCard.module.css";
 import SegmentedControl from "./SegmentedControl.tsx";
 import {type ReactElement, useEffect, useState} from "react";
 import leaf from "./../assets/leaf.png"
-import useFetchStats from "../hooks/useFetchStats.ts";
 import useFetchOptimal from "../hooks/useFetchOptimal.ts";
-import type {ICleanEnergyInterval} from "../types.ts";
 import formatDate from "../utils/formatDate.ts";
+import placeholder from "./../assets/placeholder.jpg"
 
 // date start and finish in ISO format: YYYY-MM-DDTHH:mm:ss.sssZ
 function formatPeriod(dateStart: string, dateFinish: string): string {
@@ -50,22 +49,19 @@ export default function OptimalCard() {
     }
 
     return (
-        <Card>
+        <Card className={styles.card}>
             <h3 className={styles.title}>Optimal charging time</h3>
             <span>Duration:
             <SegmentedControl updateValue={setHours}/>
                 hours</span>
             <button className={styles.button} onClick={fetch}>Submit</button>
-            <div className={styles.container}>
-                {elements}
-
-                {/*<div className={styles.result}>{intervals[1]?.hours || 0} hours at <img src={leaf} alt={"leaf"} className={styles.leaf}/>*/}
-                {/*    67% clean energy (average):*/}
-                {/*    {"\n"}between 20:30 tomorrow and 2:30 July 1</div>*/}
-
-                {/*<div className={styles.result}>{intervals[2]?.hours || 0} hours at <img src={leaf} alt={"leaf"} className={styles.leaf}/>*/}
-                {/*    67% clean energy (average):*/}
-                {/*    {"\n"}between 20:30 tomorrow and 2:30 July 1</div>*/}
+            <div className={`${styles.container} ${(elements.length == 0)? styles.containerPlaceholder: ""}`}>
+                {(elements.length > 0)? elements :
+                    <>
+                        <img className={styles.placeholderImage} src={placeholder} alt={"placeholder cat meme"}/>
+                        <span className={styles.placeholderText}>Results would appear here</span>
+                    </>
+                }
             </div>
         </Card>
     )
