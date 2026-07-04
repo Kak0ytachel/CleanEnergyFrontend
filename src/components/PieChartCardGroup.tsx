@@ -2,11 +2,17 @@ import PieChartCard from "./PieChartCard.tsx";
 import useFetchStats from "../hooks/useFetchStats.ts";
 import LegendCard from "./LegendCard.tsx";
 import styles from "./PieChartCardGroup.module.css";
+import {useEffect} from "react";
 
-export default function PieChartCardGroup() {
+export default function PieChartCardGroup({showSnackbar}: {showSnackbar?: (text: string) => void}) {
     const {stats, loading, error} = useFetchStats();
     // todo: add error handling
 
+    useEffect(() => {
+        if (error) {
+            showSnackbar?.("Error fetching data, please try again later");
+        }
+    }, [error, showSnackbar])
 
     return (
         <div className={styles.grid}>

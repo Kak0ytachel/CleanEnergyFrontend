@@ -11,7 +11,7 @@ export default function SegmentedControl({updateValue}: {updateValue?: (index: n
     })
     const elements: ReactElement[] = [];
     for (let i = 0; i < 6; i++) { // zero-based
-        elements.push(<div className={styles.option} onClick={() => setSelectedIndex(i)}>{i + 1}</div>)
+        elements.push(<div className={styles.option} key={i} onClick={() => setSelectedIndex(i)}>{i + 1}</div>)
     }
 
     return (

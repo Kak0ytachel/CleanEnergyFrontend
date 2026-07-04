@@ -26,14 +26,20 @@ function formatPeriod(dateStart: string, dateFinish: string): string {
     }
 }
 
-export default function OptimalCard() {
+export default function OptimalCard({showSnackbar}: {showSnackbar?: (text: string) => void}) {
 
     const [hours, setHours] = useState(1);
     const {intervals, loading, error, fetch} = useFetchOptimal(hours);
 
     useEffect(() => {
-        console.log(intervals);
-    }, [intervals])
+        if (error) {
+            showSnackbar?.("Error fetching optimal charging time, please try again later");
+        }
+    }, [error, showSnackbar]);
+
+    // useEffect(() => {
+    //     console.log(intervals);
+    // }, [intervals])
 
     const elements: ReactElement[] = [];
 
