@@ -1,75 +1,35 @@
-# React + TypeScript + Vite
+# CleanEnergy(Frontend)
+CleanEnergy is a fullstack web app. This repo is mostly dedicated to the frontend app. Check out the [backend repo](https://github.com/Kak0ytachel/CleanEnergyBackend).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img width="1880" height="1339" alt="Screenshot 2026-07-04 060208" src="https://github.com/user-attachments/assets/8b4b450c-7e42-4f8b-9bc6-1d5e84088882" />
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+## Technologies used
+- TypeScript
+- React
+- Vite
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## Objective
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+> Built as a test assignment for an internship 
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The app provides an interface that:
+- Displays three pie charts on UK energy production mix for 3 consecutive days. Each chart shows the share of individual energy sources in the mix, along with the share of clean energy
+- Shows optimal eco-friendly charging time (the one with the greatest average clean energy share) of given duration (1-6 hours) within next 2 days.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Features
+- Responsive UI
+- Animations
+- Loading and error indication
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Live Demo
+Available at https://cleanenergy.chel0.dev
 
+## Installation
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+git clone https://github.com/Kak0ytachel/CleanEnergyFrontend .
+npm install
+npm run dev
 ```
