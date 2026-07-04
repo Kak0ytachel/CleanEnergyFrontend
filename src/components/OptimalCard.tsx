@@ -66,7 +66,7 @@ export default function OptimalCard({showSnackbar}: {showSnackbar?: (text: strin
             <span className={styles.controlsBox}>Duration:
             <SegmentedControl updateValue={setHours}/>
                 hours
-            <button className={styles.button} onClick={fetch} disabled={loading}>Submit</button>
+            <button className={styles.button} onClick={fetch} disabled={loading}>Find</button>
                 </span>
             <div className={`${styles.container} ${(elements.length == 0)? styles.containerPlaceholder: ""}`}>
                 {(elements.length > 0)? elements :

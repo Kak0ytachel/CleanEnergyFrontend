@@ -19,8 +19,6 @@ export default function useFetchStats() {
             .finally( () => {
                 setLoading(false)
             })
-
-        // todo: add cleanup if expanding the app
         return () => {}
     }, []);
 

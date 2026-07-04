@@ -6,7 +6,6 @@ import {useEffect} from "react";
 
 export default function PieChartCardGroup({showSnackbar}: {showSnackbar?: (text: string) => void}) {
     const {stats, loading, error} = useFetchStats();
-    // todo: add error handling
 
     useEffect(() => {
         if (error) {
