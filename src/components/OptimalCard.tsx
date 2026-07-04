@@ -7,22 +7,27 @@ import useFetchOptimal from "../hooks/useFetchOptimal.ts";
 import formatDate from "../utils/formatDate.ts";
 import placeholder from "./../assets/placeholder.jpg"
 
-// date start and finish in ISO format: YYYY-MM-DDTHH:mm:ss.sssZ
+// start and finish dates in ISO format: YYYY-MM-DDTHH:mm:ss.sssZ
 function formatPeriod(dateStart: string, dateFinish: string): string {
 
-    const timeStart = dateStart.split("T")[1].slice(0, 5);
-    const timeFinish = dateFinish.split("T")[1].slice(0, 5);
+    const start = new Date(dateStart);
+    const finish = new Date(dateFinish);
 
-    // used for comparison only
-    const dayStartStr = dateStart.split("T")[0];
-    const dayFinishStr = dateFinish.split("T")[0];
+    //HH:mm format
+    const timeOptions: Intl.DateTimeFormatOptions = {hour: '2-digit', minute: '2-digit', hour12: false};
+    const timeStart = start.toLocaleTimeString('it-CH', timeOptions);
+    const timeFinish = finish.toLocaleTimeString('it-CH', timeOptions);
+
+    // compares date in local timezone
+    const dayStartStr = formatDate(dateStart, true);
+    const dayFinishStr = formatDate(dateFinish, true);
 
     if (dayStartStr === dayFinishStr) {
         const dayStr = formatDate(dateStart, true);
         return `between ${timeStart} and ${timeFinish} ${dayStr}`;
     } else {
-        return `between ${timeStart} ${formatDate(dateFinish, true)} and ` +
-            `${timeFinish} ${formatDate(dateFinish, true)}`;
+        return `between ${timeStart} ${dayStartStr} and ` +
+            `${timeFinish} ${dayFinishStr}`;
     }
 }
 
